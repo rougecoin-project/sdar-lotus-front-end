@@ -6,5 +6,8 @@ RewriteRule ^booknow\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /booknow.php [L]
+
+AddType application/x-httpd-php .php .htm .html AddHandler x-httpd-php .php .htm .html
+
 </IfModule>
 # END
