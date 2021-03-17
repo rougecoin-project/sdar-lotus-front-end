@@ -1,16 +1,266 @@
 <?php
 
+#Receive user input
+$email_address = $_POST['email'];
+$feedback = $_POST['feedback'];
 
-if($_POST["message"]) {
-
-
-mail("darfro24@gmail.com", "Here is the subject line",
-
-
-$_POST["insert your message here"]. "From: darfro24@gmail.com");
-
-
+#Filter user input
+function filter_email_header($form_field) {  
+return preg_replace('/[nr|!/<>^$%*&]+/','',$form_field);
 }
 
+$email_address  = filter_email_header($email_address);
 
+#Send email
+$headers = "From: $email_addressn";
+$sent = mail('you@domain.com', 'Feedback Form Submission', $feedback, $headers);
+
+#Thank user or notify them of a problem
+if ($sent) {
+
+?><html>
+<head>
+  
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/1stbowl-128x85.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Book Now</title>
+  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
+  <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.css">
+  <link rel="stylesheet" href="assets/formstyler/jquery.formstyler.theme.css">
+  <link rel="stylesheet" href="assets/datepicker/jquery.datetimepicker.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/recaptcha.css">
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+  
+
+</head>
+<body>
+  
+  <section class="menu menu3 cid-spvGtoKLC3" once="menu" id="menu3-1h">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="index.html">
+                        <img src="assets/images/sdart-logo-309x192.png" alt="" style="height: 3rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-2" href="index.html">Sdar Lotus</a></span>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-primary display-4" href="About.html">
+                            About Me</a></li><li class="nav-item dropdown"><a class="nav-link link text-primary dropdown-toggle display-4" href="#" data-toggle="dropdown-submenu" aria-expanded="false">Services</a><div class="dropdown-menu"><a class="text-primary dropdown-item display-4" href="Full Healing.html">Full Healing</a><a class="text-primary dropdown-item display-4" href="Sound Healing.html">Sound Healing</a></div></li>
+                    <li class="nav-item"><a class="nav-link link text-primary display-4" href="https://www.facebook.com/Sdarlotus" target="_blank">
+                            Events</a></li>
+                    <li class="nav-item"><a class="nav-link link text-primary display-4" href="booknow.html">Contact</a>
+                    </li></ul>
+                <div class="icons-menu">
+                    <a class="iconfont-wrapper" href="https://www.facebook.com/Sdarlotus" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-facebook socicon" style="color: rgb(121, 242, 225); fill: rgb(121, 242, 225);"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://www.instagram.com/sdarlotus/" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-instagram socicon" style="color: rgb(255, 102, 173); fill: rgb(255, 102, 173);"></span>
+                    </a>
+                    <a class="iconfont-wrapper" href="https://www.tiktok.com/@sdarlotus1111" target="_blank">
+                        <span class="p-2 mbr-iconfont socicon-tiktok socicon" style="color: rgb(0, 0, 0); fill: rgb(0, 0, 0);"></span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+</section>
+
+<section class="form cid-spvMr6fRbR" id="formbuilder-1l">
+    
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+<!--Formbuilder Form-->
+<form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Book Now"><input type="hidden" name="email" data-form-email="true" value="0aLf2Cqt2vSk7/NDViFwA1836t+Gv5VPVjc0Y/weQ1JfweINwk7OCW8GOWkAFFlR7U9adgLUI2Dj5AQJJGifilxYbCKmTUvVKc3I51EjoKSgLbQHnmWbpZvHyg8L9/rK">
+<div class="form-row">
+<div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
+<div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some problem!</div>
+</div>
+<div class="dragArea form-row">
+<div class="col-lg-12 col-md-12 col-sm-12">
+<h4 class="mbr-fonts-style display-5">Book Now</h4>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12">
+<hr>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+<div class="form-row">
+<div class="col">
+<input type="text" name="nameFirst" placeholder="First Name" data-form-field="nameFirst" class="form-control text-multiple" value="" id="nameFirst-formbuilder-1l">
+</div>
+<div class="col">
+<input type="text" name="nameLast" placeholder="Last Name" data-form-field="nameLast" class="form-control text-multiple" value="" id="nameLast-formbuilder-1l">
+</div>
+</div>
+</div>
+<div data-for="email" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="email" name="email" placeholder="Type your email here" data-form-field="email" class="form-control display-7" required="required" value="" id="email-formbuilder-1l">
+</div>
+<div data-for="Number" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="Number" placeholder="Number" data-form-field="Number" class="form-control display-7" value="" id="Number-formbuilder-1l">
+</div>
+<div data-for="How did you learn about me?" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<textarea name="How did you learn about me?" placeholder="How did you learn about me? If someone referred you please include their name." data-form-field="How did you learn about me?" class="form-control display-7" id="How did you learn about me?-formbuilder-1l"></textarea>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="Have you had an energy healing before?">
+<input type="text" name="Have you had an energy healing before?" placeholder="Have you had an energy healing before?" data-form-field="Have you had an energy healing before?" class="form-control display-7" value="" id="Have you had an energy healing before?-formbuilder-1l">
+</div>
+<div data-for="What dates and times are you available?" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="What dates and times are you available?" placeholder="What dates and times are you available?" data-form-field="What dates and times are you available?" class="form-control display-7" value="" id="What dates and times are you available?-formbuilder-1l">
+</div>
+<div data-for="Do you prefer to communicate via email or text?" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="Do you prefer to communicate via email or text?" placeholder="Do you prefer to communicate via email or text?" data-form-field="Do you prefer to communicate via email or text?" class="form-control display-7" value="" id="Do you prefer to communicate via email or text?-formbuilder-1l">
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="Extra">
+<textarea name="Extra" placeholder="Any extra details you might want to share..." data-form-field="Extra" class="form-control display-7" id="Extra-formbuilder-1l"></textarea>
+</div>
+<div class="col-lg-12 col-md-12 col-sm-12 form-group" style="">
+<div class="form-control-label">
+<label for="In-Person-formbuilder-1l" class="mbr-fonts-style display-7">Type of Session:</label>
+</div>
+<div data-for="Virtual" class="form-check">
+<input type="checkbox" value="Yes" name="Virtual" data-form-field="Virtual" class="form-check-input display-7" id="Virtual-formbuilder-1l">
+<label for="Virtual-formbuilder-1l" class="form-check-label display-7">Virtual</label>
+</div>
+<div data-for="In-Person" class="form-check">
+<input type="checkbox" value="Yes" name="In-Person" data-form-field="In-Person" class="form-check-input display-7" id="In-Person-formbuilder-1l">
+<label for="In-Person-formbuilder-1l" class="form-check-label display-7">In-Person</label>
+</div>
+</div>
+<div class="col-auto">
+<button type="submit" class="btn btn-primary display-7">Submit</button>
+</div>
+</div>
+</form><!--Formbuilder Form-->
+</div>
+        </div>
+    </div>
+</section>
+
+<section class="footer5 cid-spvGtpvH6u" once="footers" id="footer5-1i">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="col-md-2 col-6">
+                <div class="media-wrap">
+                    <a href="https://imgur.com/gallery/CRsUZKi">
+                        <img src="assets/images/sdart-logo-309x192.png" alt="Sdar Lotus Logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-10 col-6">
+                <p class="mbr-text align-right links mbr-fonts-style display-7">
+                    <a href="About.html" class="text-black text-primary">About</a> &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="booknow.html" class="text-black text-primary">Contact</a>
+                </p>
+            </div>
+        </div>
+        <!-- <div class="media-container-row">
+            <div class="col-md-12"> -->
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-md-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row">
+                <div class="col-md-6 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2025 Sdar Lotus - All Rights Reserved
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="social-list align-right">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="mbr-iconfont mbr-iconfont-social fa-instagram fa"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- </div>
+            </div> -->
+        </div>
+
+    </div>
+</section>
+
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/dropdown/js/nav-dropdown.js"></script>
+  <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>
+  <script src="assets/formstyler/jquery.formstyler.js"></script>
+  <script src="assets/formstyler/jquery.formstyler.min.js"></script>
+  <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid.min.js"></script>
+  
+  
+  
+ <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+    <input name="animation" type="hidden">
+  
+</body>
+</html>
+
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/7d93a1523ec6d6f00e663d6da/70045df5083e1bea000e99c1c.js");</script>
+<?php
+}
 ?>
