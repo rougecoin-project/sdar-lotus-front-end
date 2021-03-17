@@ -23,7 +23,6 @@
   <link rel="stylesheet" href="assets/datepicker/jquery.datetimepicker.min.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/recaptcha.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
   
   
@@ -85,7 +84,7 @@
         <div class="row">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
 <!--Formbuilder Form-->
-<form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Book Now"><input type="hidden" name="email" data-form-email="true" value="0aLf2Cqt2vSk7/NDViFwA1836t+Gv5VPVjc0Y/weQ1JfweINwk7OCW8GOWkAFFlR7U9adgLUI2Dj5AQJJGifilxYbCKmTUvVKc3I51EjoKSgLbQHnmWbpZvHyg8L9/rK">
+<form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="book"><input type="hidden" name="g-recaptcha-response" data-form-captcha="true" value="6LdAwYMaAAAAAOTMA4q7rKf88jHK7Zp-4zUYAXUx"><input type="hidden" name="email" data-form-email="true" value="bD6cAkL140tu5bQFcJc3SY8IbFfre/PJoW2J5xkrF7uEN96NmAn2kqkOkvaznRIQK2r3HOayhom2/klybK51DQ7b52IyS4h771pP7IKQlJW4Zr34CHIKk1onsb9/CnA2.zRO+niJxk2N2wI8C3qsi8YmqVnGBATYcC3e3EPiO7uOdSN0QSlpUhpYQpMc3AHd1tJct9cvX81bRkanRdZcFV8u2k22KO4JkEo8Lhd3Vz/sYjY1yGsHS8A8mw0GTJ/KX.LhQFEb7u/eDr2J6qMncI7g3KFpCAqnMKz46aoPYfDxLAdfOjNaZUpQ7Xh1fdrJ41L3UzAieS8NdHFs5axvwgQJk7aLNm2if9bjjeH2rkBHm8cijK3SPJon7PmxDoxoit">
 <div class="form-row">
 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
 <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some problem!</div>
@@ -94,51 +93,45 @@
 <div class="col-lg-12 col-md-12 col-sm-12">
 <h4 class="mbr-fonts-style display-5">Book Now</h4>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12">
-<hr>
-</div>
-<div class="col-lg-12 col-md-12 col-sm-12 form-group">
-<div class="form-row">
-<div class="col">
-<input type="text" name="nameFirst" placeholder="First Name" data-form-field="nameFirst" class="form-control text-multiple" value="" id="nameFirst-formbuilder-1l">
-</div>
-<div class="col">
-<input type="text" name="nameLast" placeholder="Last Name" data-form-field="nameLast" class="form-control text-multiple" value="" id="nameLast-formbuilder-1l">
-</div>
-</div>
+<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="Name">
+<input type="text" name="Name" placeholder="Name" data-form-field="Name" required="required" class="form-control display-7" value="" id="Name-formbuilder-1l">
 </div>
 <div data-for="email" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<input type="email" name="email" placeholder="Type your email here" data-form-field="email" class="form-control display-7" required="required" value="" id="email-formbuilder-1l">
+<input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control display-7" required="required" value="" id="email-formbuilder-1l">
 </div>
-<div data-for="Number" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<input type="text" name="Number" placeholder="Number" data-form-field="Number" class="form-control display-7" value="" id="Number-formbuilder-1l">
+<div data-for="number" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="number" placeholder="Phone #" data-form-field="number" class="form-control display-7" value="" id="number-formbuilder-1l">
 </div>
-<div data-for="How did you learn about me?" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<textarea name="How did you learn about me?" placeholder="How did you learn about me? If someone referred you please include their name." data-form-field="How did you learn about me?" class="form-control display-7" id="How did you learn about me?-formbuilder-1l"></textarea>
+<div data-for="field1" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<textarea name="field1" placeholder="How did you learn about me? If someone referred you please include their name." data-form-field="field1" class="form-control display-7" id="field1-formbuilder-1l"></textarea>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="Have you had an energy healing before?">
-<input type="text" name="Have you had an energy healing before?" placeholder="Have you had an energy healing before?" data-form-field="Have you had an energy healing before?" class="form-control display-7" value="" id="Have you had an energy healing before?-formbuilder-1l">
+<div data-for="field2" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="field2" placeholder="Have you had an energy healing before?" data-form-field="field2" class="form-control display-7" value="" id="field2-formbuilder-1l">
 </div>
-<div data-for="What dates and times are you available?" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<input type="text" name="What dates and times are you available?" placeholder="What dates and times are you available?" data-form-field="What dates and times are you available?" class="form-control display-7" value="" id="What dates and times are you available?-formbuilder-1l">
+<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="field3">
+<input type="text" name="field3" placeholder="What dates and times are you available?" data-form-field="field3" class="form-control display-7" value="" id="field3-formbuilder-1l">
 </div>
-<div data-for="Do you prefer to communicate via email or text?" class="col-lg-12 col-md-12 col-sm-12 form-group">
-<input type="text" name="Do you prefer to communicate via email or text?" placeholder="Do you prefer to communicate via email or text?" data-form-field="Do you prefer to communicate via email or text?" class="form-control display-7" value="" id="Do you prefer to communicate via email or text?-formbuilder-1l">
+<div data-for="field4" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<input type="text" name="field4" placeholder="Do you prefer to communicate via email or text?" data-form-field="field4" class="form-control display-7" value="" id="field4-formbuilder-1l">
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 form-group" data-for="Extra">
-<textarea name="Extra" placeholder="Any extra details you might want to share..." data-form-field="Extra" class="form-control display-7" id="Extra-formbuilder-1l"></textarea>
+<div data-for="field5" class="col-lg-12 col-md-12 col-sm-12 form-group">
+<textarea name="field5" placeholder="Any extra details you might want to share..." data-form-field="field5" class="form-control display-7" id="field5-formbuilder-1l"></textarea>
 </div>
-<div class="col-lg-12 col-md-12 col-sm-12 form-group" style="">
+<div class="col-lg-12 col-md-12 col-sm-12 form-group">
 <div class="form-control-label">
-<label for="In-Person-formbuilder-1l" class="mbr-fonts-style display-7">Type of Session:</label>
+<label for="Group-formbuilder-1l" class="mbr-fonts-style display-7">Type of Session:</label>
 </div>
-<div data-for="Virtual" class="form-check">
+<div data-for="Virtual" class="form-check form-check-inline">
 <input type="checkbox" value="Yes" name="Virtual" data-form-field="Virtual" class="form-check-input display-7" id="Virtual-formbuilder-1l">
 <label for="Virtual-formbuilder-1l" class="form-check-label display-7">Virtual</label>
 </div>
-<div data-for="In-Person" class="form-check">
+<div data-for="In-Person" class="form-check form-check-inline">
 <input type="checkbox" value="Yes" name="In-Person" data-form-field="In-Person" class="form-check-input display-7" id="In-Person-formbuilder-1l">
 <label for="In-Person-formbuilder-1l" class="form-check-label display-7">In-Person</label>
+</div>
+<div data-for="Group" class="form-check form-check-inline">
+<input type="checkbox" value="Yes" name="Group" data-form-field="Group" class="form-check-input display-7" id="Group-formbuilder-1l">
+<label for="Group-formbuilder-1l" class="form-check-label display-7">Group</label>
 </div>
 </div>
 <div class="col-auto">
@@ -230,8 +223,10 @@
   <script src="assets/formstyler/jquery.formstyler.js"></script>
   <script src="assets/formstyler/jquery.formstyler.min.js"></script>
   <script src="assets/datepicker/jquery.datetimepicker.full.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js?render=6LdAwYMaAAAAAOTMA4q7rKf88jHK7Zp-4zUYAXUx"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid.min.js"></script>
+  
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
