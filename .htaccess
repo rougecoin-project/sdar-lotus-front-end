@@ -1,10 +1,12 @@
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /
-
-
-AddType application/x-httpd-php .php .htm .html AddHandler x-httpd-php .php .htm .html
-
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^/]+)/$ $1.html
+RewriteRule ^([^/]+)/([^/]+)/$ /$1/$2.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(\.[a-zA-Z0-9]{1,5}|/)$
+RewriteRule (.*)$ /$1/ [R=301,L]
 </IfModule>
 # END
