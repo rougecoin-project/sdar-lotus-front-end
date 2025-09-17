@@ -1,3 +1,30 @@
+/* --- Magical Parallax & Card Layering --- */
+.parallax-section {
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+@media (max-width: 991px) {
+  .parallax-section {
+    background-attachment: scroll;
+  }
+}
+.magical-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  transition: box-shadow 0.3s cubic-bezier(.4,2,.6,1), transform 0.3s cubic-bezier(.4,2,.6,1);
+  padding: 2.5rem 2rem;
+  margin-top: -4rem;
+  position: relative;
+  z-index: 2;
+}
+.magical-card:hover {
+  box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.18);
+  transform: translateY(-6px) scale(1.025);
+}
 section {
   background-color: #ffffff;
 }
