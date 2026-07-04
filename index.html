@@ -21,29 +21,38 @@
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/recaptcha.css">
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-<!-- Begin SlickText Tag -->
-<script defer src="https://cdn.slicktext.com/scripts/stag.min.js"></script>
-<script>
-window.sTagConfig = window.sTagConfig || [];
-function sTag(){sTagConfig.push(arguments);}
-sTag("ut", "8558c946905c415fda84aad215ba5d17");
-</script>
-<!-- End SlickText Tag -->
+  <link rel="stylesheet" href="assets/css/youtube-gallery.css">
+  <link rel="stylesheet" href="assets/css/modern-theme.css">
+  <link rel="stylesheet" href="assets/css/mystical-theme.css">
+  <link rel="stylesheet" href="assets/css/subscribe.css">
+<!--
+  SlickText's built-in popup was replaced by our own on-brand subscribe modal
+  (see assets/js/subscribe.js). The tracking script below is kept but its
+  auto-popup is suppressed via the dashboard / our own flow. Re-enable only if
+  you want SlickText's own popup back.
+
+  <script defer src="https://cdn.slicktext.com/scripts/stag.min.js"></script>
+  <script>
+  window.sTagConfig = window.sTagConfig || [];
+  function sTag(){sTagConfig.push(arguments);}
+  sTag("ut", "8558c946905c415fda84aad215ba5d17");
+  </script>
+-->
   
   
   
 
 </head>
 <body>
-  
+  <canvas id="mystic-particles" aria-hidden="true"></canvas>
   <section class="menu menu3 cid-snODOrQ7xb" once="menu" id="menu3-k">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
         <div class="container-fluid">
             <div class="navbar-brand">
-                <span class="navbar-logo">
+                <span class="navbar-logo mystic-logo-glow">
                     <a href="index.html">
-                        <img src="assets/images/sdart-logo-309x192.png" alt="Mobirise" style="height: 3rem;">
+                        <img src="assets/images/sdart-logo-309x192.png" alt="Sdar Lotus Logo" style="height: 3rem;">
                     </a>
                 </span>
                 <span class="navbar-caption-wrap"><a class="navbar-caption text-primary display-2" href="index.html">Sdar Lotus</a></span>
@@ -98,7 +107,7 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
     </nav>
 </section>
 
-<section class="slider1 cid-snOEs7XaiC" id="slider1-n">
+<section class="slider1 cid-snOEs7XaiC mystic-hero-wrap" id="slider1-n">
     
     <div class="carousel slide carousel-fade" id="ss78s9vQzH" data-ride="carousel" data-interval="5000">
         <ol class="carousel-indicators">
@@ -118,6 +127,9 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
             
         </div>
     </div>
+    <div class="mystic-aurora-bg"></div>
+    <img class="mystic-fairy-hero" src="assets/images/mystical/fairy-hero.png" alt="" aria-hidden="true">
+    <div class="mystic-scroll-cue" aria-hidden="true"></div>
 </section>
 
 <section class="info4 cid-soFmD6mD4N" id="info4-s">
@@ -125,84 +137,106 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
     
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12">
-                <h3 class="mbr-section-title mbr-fonts-style display-1">"Take deep breaths like heartfelt sighs,</h3>
-                <p class="mbr-text mbr-fonts-style mb-4 display-1">
-                    and fall in love with every moment." -SDAR LOTUS<strong><a href="#" class="text-primary">&nbsp;</a></strong></p>
+            <div class="col-12 text-center mystic-reveal">
+                <svg class="mystic-lotus" viewBox="0 0 512 512" role="img" aria-label="Blooming lotus" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="lotusPetal" x1="0" y1="1" x2="0" y2="0">
+                            <stop offset="0" stop-color="#0f9e7d"/>
+                            <stop offset="0.45" stop-color="#5eebc8"/>
+                            <stop offset="1" stop-color="#c9a0ee"/>
+                        </linearGradient>
+                        <linearGradient id="lotusPetalInner" x1="0" y1="1" x2="0" y2="0">
+                            <stop offset="0" stop-color="#19ca9e"/>
+                            <stop offset="0.5" stop-color="#9ff0ff"/>
+                            <stop offset="1" stop-color="#e7c8ff"/>
+                        </linearGradient>
+                        <radialGradient id="lotusCore" cx="0.5" cy="0.5" r="0.5">
+                            <stop offset="0" stop-color="#fff7e6"/>
+                            <stop offset="0.5" stop-color="#f5d68a"/>
+                            <stop offset="1" stop-color="#b582de" stop-opacity="0"/>
+                        </radialGradient>
+                    </defs>
+                    <g class="lotus-ring lotus-outer" fill="url(#lotusPetal)" stroke="rgba(255,255,255,0.16)" stroke-width="0.75">
+                        <g class="lp" style="--i:0" transform="rotate(0 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:1" transform="rotate(45 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:2" transform="rotate(90 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:3" transform="rotate(135 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:4" transform="rotate(180 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:5" transform="rotate(225 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:6" transform="rotate(270 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                        <g class="lp" style="--i:7" transform="rotate(315 256 256)"><path class="petal" d="M256,256 C202,198 190,126 256,58 C322,126 310,198 256,256 Z"/></g>
+                    </g>
+                    <g class="lotus-ring lotus-mid" fill="url(#lotusPetal)" stroke="rgba(255,255,255,0.2)" stroke-width="0.75">
+                        <g class="lp" style="--i:8" transform="rotate(22.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:9" transform="rotate(67.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:10" transform="rotate(112.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:11" transform="rotate(157.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:12" transform="rotate(202.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:13" transform="rotate(247.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:14" transform="rotate(292.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                        <g class="lp" style="--i:15" transform="rotate(337.5 256 256)"><path class="petal" d="M256,256 C212,206 202,144 256,100 C310,144 300,206 256,256 Z"/></g>
+                    </g>
+                    <g class="lotus-ring lotus-inner" fill="url(#lotusPetalInner)" stroke="rgba(255,255,255,0.25)" stroke-width="0.6">
+                        <g class="lp" style="--i:16" transform="rotate(0 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:17" transform="rotate(45 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:18" transform="rotate(90 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:19" transform="rotate(135 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:20" transform="rotate(180 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:21" transform="rotate(225 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:22" transform="rotate(270 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                        <g class="lp" style="--i:23" transform="rotate(315 256 256)"><path class="petal" d="M256,256 C220,216 212,168 256,140 C300,168 292,216 256,256 Z"/></g>
+                    </g>
+                    <circle class="lotus-core" cx="256" cy="256" r="62" fill="url(#lotusCore)"/>
+                </svg>
+                <h3 class="mbr-section-title mbr-fonts-style display-1 mystic-glow-text">"Take deep breaths like heartfelt sighs, and fall in love with every moment."</h3>
+                <p class="mbr-text mbr-fonts-style mystic-quote-attr">Sdar Lotus</p>
             </div>
         </div>
     </div>
 </section>
 
-<section class="video3 cid-ss3PgL7yQ5" data-bg-video="https://youtu.be/9OqRkVDEvB0" id="video3-1u">
-    
-    
+<section class="yt-gallery-section" id="yt-gallery">
     <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2">
-                <strong>Videos</strong></h4>
-            <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7"></h5>
+        <div class="yt-featured-block" id="yt-featured" hidden>
+            <div class="yt-gallery-header mystic-reveal">
+                <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2 yt-gallery-title mystic-glow-text">
+                    <strong>Featured Videos</strong></h4>
+                <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7 yt-gallery-subtitle">Hand-picked favorites</h5>
+            </div>
+            <div class="yt-gallery-grid yt-featured-grid" id="yt-featured-grid"></div>
+            <div class="yt-gallery-divider" aria-hidden="true"></div>
         </div>
-        <div class="row mt-4">
-            <div class="col-12 col-md-6 video-block">
-                <div class="video-wrapper"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/qVARw249xjo?rel=0&amp;amp;showinfo=0&amp;autoplay=1&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
-                <p class="mbr-text pt-2 mbr-fonts-style display-4">
-                    Beach Bowls</p>
-            </div>
-            <div class="col-12 col-md-6 video-block">
-                <div class="video-wrapper"><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/wzEJckciIZc?rel=0&amp;amp;showinfo=0&amp;autoplay=1&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
-                <p class="mbr-text pt-2 mbr-fonts-style display-4">
-                    P.L.E. Music Video</p>
-            </div>
+        <div class="yt-gallery-header mystic-reveal">
+            <h4 class="mbr-section-title mbr-fonts-style mb-0 display-2 yt-gallery-title mystic-glow-text">
+                <strong>Latest Videos</strong></h4>
+            <h5 class="mbr-section-subtitle mbr-fonts-style mb-0 mt-2 display-7 yt-gallery-subtitle">Straight from the Sdar Lotus YouTube channel</h5>
+        </div>
+        <div class="yt-gallery-grid" id="yt-gallery-grid"></div>
+        <div class="text-center mystic-reveal">
+            <a class="yt-gallery-link" href="https://www.youtube.com/@sdarlotus" target="_blank" rel="noopener">See all videos on YouTube</a>
         </div>
     </div>
+    <img class="mystic-fairy-accent" src="assets/images/mystical/fairy-accent-small.png" alt="" aria-hidden="true">
 </section>
-
-<section class="info4 cid-soFmD6mD4N" id="info4-s">
-
-
 
 <section class="footer5 cid-soFqwc8lgT" once="footers" id="footer5-u">
 
-    
+    <div class="mystic-aurora-bg"></div>
 <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12">
-                <center><h3 class="mbr-section-title mbr-fonts-style display-1">MUSIC<iframe src="https://open.spotify.com/embed/artist/2YnyZ86JzfGPXMhLeHXY5Y?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></h3></center>
+            <div class="col-12 mystic-reveal">
+                <center><h3 class="mbr-section-title mbr-fonts-style display-1 mystic-glow-text">MUSIC</h3><iframe src="https://open.spotify.com/embed/artist/2YnyZ86JzfGPXMhLeHXY5Y?utm_source=generator" width="100%" height="380" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe></center>
                 <p class="mbr-text mbr-fonts-style mb-4 display-1">
                     <strong><a href="#" class="text-primary">&nbsp;</a></strong></p>
             </div>
         </div>
     </div>
-</section>
-<section class="slider1 cid-snOEs7XaiC" id="slider1-n">
-    
-    <div class="carousel slide carousel-fade" id="ss78s9vQzH" data-ride="carousel" data-interval="5000">
-        <ol class="carousel-indicators">
-            <li data-slide-to="0" class="active" data-target="#ss78s9vQzH"></li>
-            
-            
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item slider-image item active">
-                <div class="item-wrapper">
-                    <img class="d-block w-100" src="assets/images/new1.jpg" data-slide-to="7">
-                    
-                    
-                </div>
-            </div>
-            
-            
-        </div>
-    </div>
-</section>
-    
 
     <div class="container-fluid">
         <div class="media-container-row">
             <div class="col-md-2 col-6">
                 <div class="media-wrap">
-                    <a href="https://imgur.com/gallery/CRsUZKi">
+                    <a href="/index.html">
                         <img src="/assets/images/sdart-logo-309x192.png" alt="Sdar Lotus Logo">
                     </a>
                 </div>
@@ -216,6 +250,8 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
         </div>
         <!-- <div class="media-container-row">
             <div class="col-md-12"> -->
+        <img class="mystic-divider" src="assets/images/mystical/lotus-divider.png" alt="" aria-hidden="true">
+        <div class="mystic-sparkle-strip" aria-hidden="true"></div>
         <div class="footer-lower">
             <div class="media-container-row">
                 <div class="col-md-12">
@@ -225,23 +261,23 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
             <div class="media-container-row">
                 <div class="col-md-6 copyright">
                     <p class="mbr-text mbr-fonts-style display-7">
-                        © Copyright 2025 Sdar Lotus - All Rights Reserved
+                        © Copyright 2026 Sdar Lotus - All Rights Reserved
                     </p>
                 </div>
                 <div class="col-md-6">
                     <div class="social-list align-right">
                         <div class="soc-item">
-                            <a href="https://twitter.com/mobirise" target="_blank">
+                            <a href="https://www.instagram.com/sdarlotus/" target="_blank">
                                 <span class="mbr-iconfont mbr-iconfont-social fa-instagram fa"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                            <a href="https://www.facebook.com/Sdarlotus" target="_blank">
                                 <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
                         <div class="soc-item">
-                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                            <a href="https://www.youtube.com/@sdarlotus" target="_blank">
                                 <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
                             </a>
                         </div>
@@ -256,12 +292,42 @@ sTag("ut", "8558c946905c415fda84aad215ba5d17");
         </div>
 
     </div>
-    
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/q" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Created with Mobirise <a href="https://mobirise.site/u" style="color:#aaa;">web</a> templates</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/playervimeo/vimeo_player.js"></script>  <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>  <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/theme/js/script.js"></script>  
+    <img class="mystic-watermark" src="assets/images/mystical/lotus-glow.png" alt="" aria-hidden="true">
+</section>
+<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/q" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Created with Mobirise <a href="https://mobirise.site/u" style="color:#aaa;">web</a> templates</p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/viewportchecker/jquery.viewportchecker.js"></script>  <script src="assets/playervimeo/vimeo_player.js"></script>  <script src="assets/ytplayer/jquery.mb.ytplayer.min.js"></script>  <script src="assets/vimeoplayer/jquery.mb.vimeo_player.js"></script>  <script src="assets/dropdown/js/nav-dropdown.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>  <script src="assets/theme/js/script.js"></script>  <script src="assets/js/youtube-gallery.js"></script>  <script src="assets/js/mystical-effects.js"></script>  <script src="assets/js/subscribe.js"></script>  
   
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
-  
+
+    <!-- On-brand subscribe popup (replaces the SlickText widget popup) -->
+    <div class="st-overlay" id="subscribe-popup" role="dialog" aria-modal="true" aria-labelledby="st-title" aria-describedby="st-desc" hidden>
+      <div class="st-modal">
+        <button type="button" class="st-close" id="st-close" aria-label="Close">&times;</button>
+        <div class="st-glow" aria-hidden="true"></div>
+        <div class="st-sparkle" aria-hidden="true"></div>
+        <h3 class="st-title" id="st-title">Join the Circle</h3>
+        <p class="st-desc" id="st-desc">Be first to hear about upcoming events, sound baths &amp; offerings from Sdar Lotus.</p>
+        <form class="st-form" id="st-form" novalidate>
+          <div class="st-field">
+            <input type="tel" id="st-phone" name="phone" placeholder="Mobile number" autocomplete="tel" required>
+          </div>
+          <label class="st-consent" for="st-consent">
+            <input type="checkbox" id="st-consent" name="consent">
+            <span>I agree to receive automated promotional text messages from Sdar Lotus. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply STOP to opt out or HELP for help.</span>
+          </label>
+          <p class="st-error" id="st-error" role="alert" hidden></p>
+          <button type="submit" class="st-submit">Join Now</button>
+          <button type="button" class="st-dismiss" id="st-dismiss">No thanks</button>
+        </form>
+        <div class="st-success" id="st-success" hidden>
+          <div class="st-success-icon" aria-hidden="true">&#10003;</div>
+          <h3 class="st-title">You're in&nbsp;&#10024;</h3>
+          <p class="st-desc">Thank you for joining the Sdar Lotus circle.</p>
+          <button type="button" class="st-submit" id="st-done">Close</button>
+        </div>
+      </div>
+    </div>
+
 </body>
 </html>

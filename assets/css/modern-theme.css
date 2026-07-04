@@ -1,0 +1,507 @@
+/*
+ * Modern theme overrides layered on top of the original Mobirise-generated CSS.
+ * Loaded last on every page so these rules win without editing the generated files.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --ml-teal: #5eebc8;
+  --ml-teal-deep: #19ca9e;
+  --ml-teal-dark: #084234;
+  --ml-purple: #b582de;
+  --ml-gold: #e7c884;
+  --ml-ink: #08080b;
+  --ml-ink-2: #0d0d13;
+  --ml-panel: #14141b;
+  --ml-panel-2: #1b1b24;
+  --ml-text: #f1f1f4;
+  --ml-text-soft: #a9abb6;
+  --ml-hairline: rgba(255, 255, 255, 0.08);
+  --ml-radius: 1.1rem;
+  --ml-radius-pill: 3rem;
+  --ml-serif: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
+  --ml-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ml-shadow: 0 18px 50px -12px rgba(0, 0, 0, 0.65);
+  --ml-shadow-soft: 0 8px 30px -8px rgba(0, 0, 0, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--ml-ink);
+}
+
+/* Subtle depth: a faint aurora wash behind everything instead of flat black */
+body {
+  color: var(--ml-text);
+  background-color: var(--ml-ink);
+  background-image:
+    radial-gradient(60rem 40rem at 78% -10%, rgba(181, 130, 222, 0.12), transparent 60%),
+    radial-gradient(50rem 40rem at 8% 8%, rgba(94, 235, 200, 0.09), transparent 55%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+/* ============================
+   Premium typography
+   Swaps the condensed template fonts for an editorial serif + clean sans
+   pairing, and refines weight / spacing / rhythm site-wide.
+   ============================ */
+body,
+.display-4,
+.display-5,
+.display-7,
+.mbr-text,
+.nav-link,
+.dropdown-item,
+p {
+  font-family: var(--ml-sans) !important;
+}
+
+.mbr-text,
+p.mbr-text {
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.display-1,
+.display-2,
+.mbr-section-title,
+h1, h2, h3 {
+  font-family: var(--ml-serif) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.005em;
+}
+
+.display-1,
+.mbr-section-title.display-1 {
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+/* Section eyebrow / subtitle: refined uppercase tracking */
+.mbr-section-subtitle {
+  font-family: var(--ml-sans) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.82rem !important;
+  font-weight: 500;
+  color: var(--ml-gold) !important;
+}
+
+/* Nav links: smaller, tracked, uppercase for a boutique feel */
+.cid-snODOrQ7xb .nav-link {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.82rem !important;
+  font-weight: 500 !important;
+}
+
+.cid-snODOrQ7xb .navbar-caption {
+  font-family: var(--ml-serif) !important;
+  font-style: italic;
+  letter-spacing: 0.02em;
+}
+
+/* ============================
+   Site-wide dark surfaces
+   Mobirise generated most sections with a plain white/off-white
+   background assuming dark text. These rules convert every one of
+   them (across every page) to the dark theme and fix the text
+   colors that would otherwise disappear on the new dark background.
+   ============================ */
+.cid-soFqwc8lgT,
+.cid-ss76dg9sOs,
+.cid-spvGtpvH6u,
+.cid-spw5NW2BJ6,
+.cid-soFBAcOt2p,
+.cid-soFBvGwXnI,
+.cid-soFOv3EQrG,
+.cid-spw5NVifxm,
+.cid-snOEs7XaiC,
+.cid-soFmD6mD4N {
+  background-color: transparent !important;
+}
+
+/* Hairline dividers between stacked dark sections for subtle structure */
+.cid-soFBvGwXnI,
+.cid-soFOv3EQrG,
+.cid-soFmD6mD4N {
+  border-top: 1px solid var(--ml-hairline);
+}
+
+.cid-soFqwc8lgT .mbr-text,
+.cid-ss76dg9sOs .mbr-text,
+.cid-spvGtpvH6u .mbr-text,
+.cid-spw5NW2BJ6 .mbr-text {
+  color: var(--ml-text-soft) !important;
+}
+
+.cid-soFqwc8lgT .footer-lower .social-list .mbr-iconfont-social,
+.cid-ss76dg9sOs .footer-lower .social-list .mbr-iconfont-social,
+.cid-spvGtpvH6u .footer-lower .social-list .mbr-iconfont-social,
+.cid-spw5NW2BJ6 .footer-lower .social-list .mbr-iconfont-social {
+  color: var(--ml-text) !important;
+}
+
+.cid-soFqwc8lgT .footer-lower hr,
+.cid-ss76dg9sOs .footer-lower hr,
+.cid-spvGtpvH6u .footer-lower hr,
+.cid-spw5NW2BJ6 .footer-lower hr {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  opacity: 1 !important;
+}
+
+.text-black {
+  color: var(--ml-text-soft) !important;
+}
+
+a.text-black:hover,
+a.text-black:focus,
+a.text-black.active {
+  color: var(--ml-teal) !important;
+}
+
+.cid-soFOv3EQrG .item-wrapper {
+  background-color: rgba(20, 20, 27, 0.7) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--ml-hairline);
+  border-radius: var(--ml-radius);
+  overflow: hidden;
+  box-shadow: 0 18px 50px -18px rgba(0, 0, 0, 0.8);
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.cid-soFOv3EQrG .item:hover .item-wrapper {
+  transform: translateY(-8px);
+  border-color: rgba(94, 235, 200, 0.4);
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.9), 0 0 40px -10px rgba(94, 235, 200, 0.3);
+}
+
+.cid-soFOv3EQrG .item-content {
+  padding: 1.75rem !important;
+}
+
+.cid-soFOv3EQrG .item-subtitle {
+  color: var(--ml-text-soft) !important;
+}
+
+.cid-soFmD6mD4N h3 {
+  color: var(--ml-text) !important;
+}
+
+/* Countdown numbers on Events.html sit over a dark parallax photo */
+.cid-soG3dhaFK5 .number-wrap,
+.cid-soG3dhaFK5 .number {
+  color: var(--ml-text) !important;
+}
+
+/* Header photo overlays across the service pages were tinted white
+   (opacity 0.8 inline), washing every hero photo out to near-white.
+   Swap the tint to a moody dark tint instead. */
+.mbr-overlay[style*="rgb(255, 255, 255)"] {
+  background-color: rgba(6, 7, 10, 0.78) !important;
+}
+
+.cid-spvMr6fRbR .mbr-overlay,
+.cid-ss76dfKqnC .mbr-overlay {
+  background-color: rgba(6, 7, 10, 0.7) !important;
+}
+
+a[style*="color: #006666"] {
+  color: var(--ml-teal) !important;
+}
+
+/* Mobirise credit strip pinned to the bottom of every page */
+section[style*="background-color: #fff"] {
+  background-color: var(--ml-panel) !important;
+}
+
+section[style*="background-color: #fff"] a,
+section[style*="background-color: #fff"] p {
+  color: var(--ml-text-soft) !important;
+}
+
+/* ============================
+   Navigation - dark glass bar
+   ============================ */
+.cid-snODOrQ7xb .navbar-dropdown {
+  background: rgba(7, 8, 10, 0.6) !important;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid rgba(94, 235, 200, 0.12);
+  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.cid-snODOrQ7xb .navbar-dropdown.navbar-short {
+  background: rgba(6, 7, 8, 0.92) !important;
+  border-bottom-color: rgba(94, 235, 200, 0.25);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.45);
+}
+
+.cid-snODOrQ7xb .navbar {
+  border-bottom: none !important;
+}
+
+.cid-snODOrQ7xb .navbar-caption,
+.cid-snODOrQ7xb .nav-link,
+.cid-snODOrQ7xb .dropdown-toggle {
+  color: #f5f5f5 !important;
+  letter-spacing: 0.01em;
+}
+
+.cid-snODOrQ7xb .nav-link:hover,
+.cid-snODOrQ7xb .dropdown-toggle:hover,
+.cid-snODOrQ7xb .navbar-caption:hover {
+  color: var(--ml-teal) !important;
+}
+
+.cid-snODOrQ7xb .nav-item .nav-link {
+  position: relative;
+}
+
+.cid-snODOrQ7xb ul.navbar-nav > .nav-item > .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--ml-teal);
+  transition: width 0.25s ease;
+}
+
+.cid-snODOrQ7xb ul.navbar-nav > .nav-item > .nav-link:hover::after {
+  width: 100%;
+}
+
+/* Dropdown panels */
+.cid-snODOrQ7xb .dropdown-menu {
+  background: rgba(14, 14, 16, 0.97) !important;
+  border: 1px solid rgba(94, 235, 200, 0.15) !important;
+  border-radius: var(--ml-radius) !important;
+  box-shadow: var(--ml-shadow);
+  padding: 0.5rem !important;
+  overflow: hidden;
+  animation: ml-dropdown-in 0.18s ease;
+}
+
+@keyframes ml-dropdown-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cid-snODOrQ7xb .dropdown-item {
+  color: #e9e9e9 !important;
+  border-bottom: none !important;
+  border-radius: 0.6rem !important;
+  padding: 0.6rem 1rem !important;
+  transition: background 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.cid-snODOrQ7xb .dropdown-item:hover,
+.cid-snODOrQ7xb .dropdown-item:focus {
+  background: rgba(94, 235, 200, 0.14) !important;
+  color: var(--ml-teal) !important;
+  padding-left: 1.35rem !important;
+}
+
+.cid-snODOrQ7xb .iconfont-wrapper {
+  border-radius: 50%;
+  width: 2.35rem;
+  height: 2.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cid-snODOrQ7xb .iconfont-wrapper:hover {
+  background: rgba(94, 235, 200, 0.15);
+  transform: translateY(-2px);
+}
+
+.cid-snODOrQ7xb button.navbar-toggler .hamburger span {
+  background-color: #f5f5f5 !important;
+}
+
+/* TikTok icon ships with an inline black color that vanishes on the dark
+   nav; force it to a visible light tone (overrides the inline style). */
+.cid-snODOrQ7xb .icons-menu .socicon-tiktok {
+  color: #f2f2f5 !important;
+  fill: #f2f2f5 !important;
+}
+
+.cid-snODOrQ7xb .icons-menu a:hover .socicon-tiktok {
+  color: var(--ml-teal) !important;
+  fill: var(--ml-teal) !important;
+}
+
+/* ============================
+   Buttons
+   ============================ */
+.btn {
+  border-radius: var(--ml-radius-pill) !important;
+  font-family: var(--ml-sans) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.78rem !important;
+  padding: 0.95rem 2.1rem !important;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease !important;
+}
+
+/* Filled buttons: give them a rich gradient + soft glow instead of flat fill */
+.btn-primary,
+.btn-primary:active,
+.btn-success,
+.btn-success:active {
+  background-image: linear-gradient(135deg, var(--ml-teal), var(--ml-teal-deep)) !important;
+  border-color: transparent !important;
+  color: #05231c !important;
+  box-shadow: 0 10px 30px -8px rgba(94, 235, 200, 0.45);
+}
+
+.btn-primary:hover,
+.btn-success:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 40px -8px rgba(94, 235, 200, 0.55);
+  color: #05231c !important;
+}
+
+/* Outline buttons: elegant hairline that fills on hover */
+.btn-primary-outline,
+.btn-success-outline {
+  background: transparent !important;
+  border: 1px solid rgba(94, 235, 200, 0.5) !important;
+  color: var(--ml-teal) !important;
+}
+
+.btn-primary-outline:hover,
+.btn-success-outline:hover {
+  transform: translateY(-3px);
+  background: rgba(94, 235, 200, 0.1) !important;
+  border-color: var(--ml-teal) !important;
+  color: var(--ml-teal) !important;
+}
+
+/* ============================
+   Forms
+   ============================ */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-radius: 0.7rem !important;
+  padding: 0.75rem 1rem !important;
+  color: #232323 !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.form-control::placeholder {
+  color: rgba(35, 35, 35, 0.55);
+}
+
+.form-control:focus {
+  background-color: #ffffff !important;
+  border-color: var(--ml-teal) !important;
+  box-shadow: 0 0 0 3px rgba(94, 235, 200, 0.25) !important;
+  outline: none;
+}
+
+/* ============================
+   Feature / image items
+   ============================ */
+.features-image .item-wrapper {
+  border-radius: var(--ml-radius);
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.features-image:hover .item-wrapper {
+  transform: translateY(-5px);
+  box-shadow: var(--ml-shadow);
+}
+
+/* ============================
+   Footer
+   ============================ */
+.cid-soFqwc8lgT {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+.cid-soFqwc8lgT hr {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.cid-soFqwc8lgT .links a {
+  transition: color 0.2s ease;
+}
+
+.cid-soFqwc8lgT .social-list .soc-item a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  margin-left: 0.5rem;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.cid-soFqwc8lgT .social-list .soc-item a:hover {
+  background: var(--ml-teal);
+  transform: translateY(-3px);
+}
+
+.cid-soFqwc8lgT .social-list .soc-item a span {
+  color: #ffffff !important;
+}
+
+.cid-soFqwc8lgT .media-wrap img {
+  transition: transform 0.3s ease;
+}
+
+.cid-soFqwc8lgT .media-wrap:hover img {
+  transform: scale(1.05);
+}
+
+/* ============================
+   Scroll-to-top button
+   ============================ */
+#scrollToTop {
+  border-radius: 50% !important;
+  background: var(--ml-teal) !important;
+  box-shadow: 0 6px 18px rgba(94, 235, 200, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#scrollToTop:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(94, 235, 200, 0.45);
+}
+
+#scrollToTop a i {
+  color: var(--ml-teal-dark) !important;
+}

@@ -1,0 +1,269 @@
+/*
+ * On-brand subscribe popup. Replaces the default SlickText widget popup.
+ * Styling follows the mystical/premium theme (glass panel, aurora glow,
+ * gradient button, serif heading).
+ */
+
+.st-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(4, 4, 8, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.st-overlay[hidden] {
+  display: flex; /* keep it flex; visibility handles show/hide for transitions */
+}
+
+.st-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.st-modal {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  padding: 2.75rem 2rem 2rem;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(181, 130, 222, 0.22), transparent 60%),
+    rgba(20, 20, 27, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 80px -24px rgba(0, 0, 0, 0.85), 0 0 60px -30px rgba(94, 235, 200, 0.5);
+  transform: translateY(24px) scale(0.98);
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.st-overlay.is-open .st-modal {
+  transform: translateY(0) scale(1);
+}
+
+/* Soft aurora glow sweeping the top of the panel */
+.st-glow {
+  position: absolute;
+  top: -55%;
+  left: 50%;
+  width: 130%;
+  height: 120%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 50%, rgba(94, 235, 200, 0.22), transparent 60%);
+  pointer-events: none;
+}
+
+.st-sparkle {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(1.5px 1.5px at 18% 22%, rgba(255, 255, 255, 0.8), transparent 60%),
+    radial-gradient(1.5px 1.5px at 82% 30%, rgba(245, 197, 107, 0.8), transparent 60%),
+    radial-gradient(1.5px 1.5px at 70% 14%, rgba(181, 130, 222, 0.8), transparent 60%),
+    radial-gradient(1.5px 1.5px at 30% 12%, rgba(94, 235, 200, 0.8), transparent 60%);
+}
+
+.st-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.9rem;
+  z-index: 2;
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.st-close:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.st-title {
+  position: relative;
+  font-family: var(--ml-serif, 'Cormorant Garamond', Georgia, serif);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+  color: #f1f1f4;
+}
+
+.st-desc {
+  position: relative;
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-weight: 300;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #b7b9c3;
+  margin: 0 auto 1.5rem;
+  max-width: 32ch;
+}
+
+.st-form {
+  position: relative;
+}
+
+.st-field {
+  margin-bottom: 0.75rem;
+}
+
+.st-field input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f1f1f4;
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.st-field input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.st-field input:focus {
+  outline: none;
+  border-color: var(--ml-teal, #5eebc8);
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 0 0 3px rgba(94, 235, 200, 0.2);
+}
+
+.st-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  text-align: left;
+  margin: 0.25rem 0 0.9rem;
+  cursor: pointer;
+}
+
+.st-consent input {
+  flex: 0 0 auto;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.15rem;
+  accent-color: var(--ml-teal, #5eebc8);
+  cursor: pointer;
+}
+
+.st-consent span {
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-size: 0.68rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.st-error {
+  color: #ff9ea6;
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  margin: 0 0 0.75rem;
+  text-align: left;
+}
+
+.st-submit {
+  width: 100%;
+  padding: 0.95rem 1.5rem;
+  margin-top: 0.35rem;
+  border: 0;
+  border-radius: 3rem;
+  cursor: pointer;
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #05231c;
+  background-image: linear-gradient(135deg, #5eebc8, #19ca9e);
+  box-shadow: 0 10px 30px -8px rgba(94, 235, 200, 0.5);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.st-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 16px 40px -8px rgba(94, 235, 200, 0.6);
+}
+
+.st-submit:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+}
+
+.st-fineprint {
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-size: 0.66rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 1rem auto 0.5rem;
+  max-width: 34ch;
+}
+
+.st-dismiss {
+  background: none;
+  border: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--ml-sans, 'Inter', sans-serif);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.st-dismiss:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Success state */
+.st-success {
+  position: relative;
+}
+
+.st-success-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #05231c;
+  background-image: linear-gradient(135deg, #5eebc8, #19ca9e);
+  box-shadow: 0 0 30px -6px rgba(94, 235, 200, 0.6);
+}
+
+@media (max-width: 480px) {
+  .st-modal {
+    padding: 2.5rem 1.35rem 1.5rem;
+  }
+  .st-title {
+    font-size: 1.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .st-overlay,
+  .st-modal {
+    transition: none;
+  }
+}
