@@ -1,0 +1,11 @@
+Build out Events page and fix site-wide navigation
+
+- Rebuild Events.html with a themed "no events yet" message and an
+  inline SlickText subscribe form for updates
+- Repoint the site-wide "Events" nav link to /Events.html (was Facebook)
+  across all pages, leaving Facebook social icons untouched
+- Add contained top-image banners to service pages, homepage feature
+  image, and Rainstick Dreams promo
+- Fix mobile menu readability, image stretching, logo/header home links,
+  and tighten vertical spacing
+- Add service/homepage imagery assets

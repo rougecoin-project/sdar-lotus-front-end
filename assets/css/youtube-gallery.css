@@ -1,8 +1,8 @@
 /* Latest Videos gallery - pulls live from the YouTube Data API (see assets/js/youtube-gallery.js) */
 
 .yt-gallery-section {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 0.5rem;
   background-color: transparent;
 }
 

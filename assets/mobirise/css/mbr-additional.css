@@ -3208,8 +3208,20 @@ a {
     left: -1rem;
   }
 }
+/* The photo is now shown as a contained image banner at the top of the page
+   (see .mystic-top-image) instead of a stretched full-bleed background, so the
+   title/intro simply sit on the dark theme background. */
 .cid-spvEYckSK0 {
-  background-image: url("../../../assets/images/2bowls-1900x2519.jpg");
+  background-image: none !important;
+  background-color: transparent !important;
+}
+.cid-spvEYckSK0 .mbr-overlay {
+  display: none !important;
+}
+.cid-spvEYckSK0.mbr-fullscreen {
+  min-height: auto !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 2.5rem !important;
 }
 @media (max-width: 991px) {
   .cid-spvEYckSK0 .mbr-section-title,

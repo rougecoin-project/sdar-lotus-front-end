@@ -355,6 +355,243 @@ section[style*="background-color: #fff"] p {
   fill: var(--ml-teal) !important;
 }
 
+/* --- Mobile menu: Mobirise forces the opened nav panel to solid #ffffff
+   (`.cid-snODOrQ7xb .navbar.opened`), which hid the white links. Override
+   that opened state (and its submenus) with our dark glass surface. These
+   selectors match Mobirise's specificity and load later, so they win. */
+@media (max-width: 991.98px) {
+  .cid-snODOrQ7xb .navbar-dropdown {
+    background: rgba(6, 7, 8, 0.94) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+  }
+
+  .cid-snODOrQ7xb .navbar.opened {
+    background: rgba(8, 9, 12, 0.98) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border-bottom: 1px solid rgba(94, 235, 200, 0.2) !important;
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.55);
+  }
+
+  /* Submenu panels (About / Services): Mobirise also forces these white */
+  .cid-snODOrQ7xb .navbar.opened .dropdown-menu,
+  .cid-snODOrQ7xb .navbar .navbar-collapse .dropdown-menu {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0.15rem 0 0.35rem 0.85rem !important;
+    animation: none;
+  }
+
+  .cid-snODOrQ7xb .navbar .nav-item .nav-link {
+    color: #f5f5f5 !important;
+    padding: 0.7rem 0.25rem !important;
+  }
+
+  .cid-snODOrQ7xb .navbar .dropdown-item {
+    color: #cfe9e1 !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  }
+
+  /* Close (X) button + caption stay legible on the dark panel */
+  .cid-snODOrQ7xb .navbar-close,
+  .cid-snODOrQ7xb .navbar-close .mbr-iconfont,
+  .cid-snODOrQ7xb .navbar.opened .navbar-caption {
+    color: #f5f5f5 !important;
+  }
+
+  /* Social icons row: space it out and separate it from the links */
+  .cid-snODOrQ7xb .navbar .icons-menu {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    padding-top: 0.75rem !important;
+    margin-top: 0.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ============================
+   Top image banner (Services pages) — contained hero image placed at the
+   top of the page instead of a full-bleed background.
+   ============================ */
+.mystic-top-image {
+  padding-top: 108px; /* clear the fixed navbar */
+  padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.mystic-top-image .image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.mystic-top-image img {
+  width: 460px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 26px 64px -22px rgba(0, 0, 0, 0.75),
+    0 0 54px -20px rgba(94, 235, 200, 0.35);
+}
+
+/* Wide variant for landscape photos (e.g. session shots) fills the column */
+.mystic-top-image--wide img {
+  width: 100%;
+}
+
+/* Feature image (e.g. homepage, above the footer) */
+.mystic-feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2.5rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 26px 64px -22px rgba(0, 0, 0, 0.75),
+    0 0 54px -20px rgba(94, 235, 200, 0.35);
+}
+
+/* Events page — "no events scheduled, subscribe" section */
+/* Base Mobirise theme paints every plain <section> white; keep our custom
+   sections transparent so the dark aurora body shows through. */
+section.mystic-events,
+section.mystic-promo,
+section.mystic-top-image,
+section.mystic-feature-image {
+  background-color: transparent;
+}
+
+.mystic-events {
+  min-height: 72vh;
+  padding: 150px 0 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.mystic-events-eyebrow {
+  display: inline-block;
+  font-family: var(--ml-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--ml-gold, #f5c56b);
+  margin-bottom: 0.75rem;
+}
+
+.mystic-events-lead {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--ml-text);
+  max-width: 34rem;
+  margin: 0.5rem auto 0.75rem;
+}
+
+.mystic-events-sub {
+  color: var(--ml-text-soft);
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.mystic-events-form {
+  max-width: 400px;
+  margin: 2.25rem auto 0;
+  text-align: left;
+}
+
+.mystic-events-success {
+  max-width: 440px;
+  margin: 1.5rem auto 0;
+}
+
+/* Affiliate / promo banner */
+.mystic-promo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  margin: 0 auto 2.5rem;
+  padding: 1.1rem 1.6rem;
+  border-radius: 16px;
+  text-decoration: none;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(94, 235, 200, 0.16), transparent 55%),
+    radial-gradient(120% 140% at 100% 100%, rgba(181, 130, 222, 0.18), transparent 55%),
+    rgba(20, 20, 27, 0.8);
+  border: 1px solid rgba(94, 235, 200, 0.28);
+  box-shadow: 0 16px 44px -20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.mystic-promo:hover {
+  transform: translateY(-3px);
+  border-color: rgba(94, 235, 200, 0.55);
+  box-shadow: 0 22px 54px -20px rgba(0, 0, 0, 0.8), 0 0 40px -18px rgba(94, 235, 200, 0.45);
+}
+
+.mystic-promo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.mystic-promo-title {
+  font-family: var(--ml-serif);
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: #f1f1f4;
+}
+
+.mystic-promo-sub {
+  font-family: var(--ml-sans);
+  font-size: 0.9rem;
+  color: var(--ml-text-soft);
+  letter-spacing: 0.01em;
+}
+
+.mystic-promo-sub strong {
+  color: var(--ml-teal);
+  letter-spacing: 0.08em;
+}
+
+.mystic-promo-cta {
+  flex: 0 0 auto;
+  padding: 0.7rem 1.6rem;
+  border-radius: 3rem;
+  font-family: var(--ml-sans);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #05231c;
+  background-image: linear-gradient(135deg, var(--ml-teal), var(--ml-teal-deep));
+  box-shadow: 0 10px 26px -8px rgba(94, 235, 200, 0.5);
+}
+
+@media (max-width: 600px) {
+  .mystic-promo {
+    justify-content: center;
+    text-align: center;
+  }
+  .mystic-promo-body {
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .mystic-top-image {
+    padding-top: 88px;
+  }
+  .mystic-top-image img {
+    width: 100%;
+  }
+}
+
 /* ============================
    Buttons
    ============================ */
@@ -446,7 +683,7 @@ section[style*="background-color: #fff"] p {
    Footer
    ============================ */
 .cid-soFqwc8lgT {
-  padding-top: 3rem;
+  padding-top: 0.5rem;
   padding-bottom: 2rem;
 }
 
